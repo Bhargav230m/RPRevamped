@@ -1,0 +1,117 @@
+Your task is to analyze a character card and evaluate both **tags** and **dialogue quality** based on strict criteria.
+
+---
+
+### ✅ INPUT FORMAT:
+You will receive the following structured data:
+
+- `Name`: The character’s name  
+- `Persona`: The character’s personality description and behavioral instructions  
+- `Example Dialogues`: Sample one-on-one dialogues between `{{user}}` and `{{char}}`  
+- `Scenario`: A roleplay scenario/backdrop for the character  
+- `Starter Message`: A narrative introduction written by `{{char}}`, establishing context for roleplay  
+- `Conversations`: Multiple turn-based conversations between `{{user}}` and `{{char}}`  
+
+---
+
+### 🎯 OBJECTIVES:
+
+You must produce two outputs:
+
+---
+
+## 1. **Tags**
+
+You must analyze all input content and extract relevant tags. Use the following format and strict limits:
+
+```yaml
+## Tags:
+general_tags: ["tag1", "tag2", ..., max 15]
+kink_tags: ["tag1", "tag2", ..., max 15] or ["none"]
+fetish_tags: ["tag1", "tag2", ..., max 15] or ["none"]
+```
+
+- **General Tags:** Genre or theme tags like `sci-fi`, `fantasy`, `villain`, `detective`, `slice of life`, `90s`, `supernatural`, etc.  
+- **Kink Tags:** Erotic preferences or roleplay tropes such as `dom/sub`, `breathplay`, `voyeurism`, `corruption`, etc. If none are present, write `["none"]`.
+- **Fetish Tags:** Specific sexual interests such as `feet`, `tentacles`, `latex`, `ageplay`, `monster`, `nippleplay`, `size difference`, etc. If none are present, write `["none"]`.
+
+🛑 **Do not hallucinate tags**. Use only what is implied or directly expressed in the source.
+
+---
+
+## 2. **Conversations Rating**
+
+You must evaluate how well the example `Conversations` align with the `Persona` of the character. Check for consistency, dialogue quality, and realism.
+
+Use this exact format:
+
+```yaml
+## Conversations Rating:
+passed: True or False
+Explanation:
+<Your explanation goes here, this should be long and should also explain what can be improved to make it good>
+```
+
+---
+
+### 🎯 Evaluation Criteria for Conversation Quality:
+
+Be hypercritical and analytical. A conversation **fails** if any of the following are true:
+
+#### ❌ Major Red Flags:
+- **Character voice mismatch**: `{{char}}` is out-of-character based on the `Persona`
+- **Dialogue repetition**: Emotional or verbal repetition without narrative progression
+- **Shallow interaction**: Lack of layered interaction or emotional subtext
+- **Bot-like exchanges**: Flat, robotic, or generic lines from either speaker
+- **Filler tropes or clichés**: Overused or generic romantic/erotic lines (see banned phrases)
+- **Imbalanced turns**: `{{char}}` replies under 60 words or `{{user}}` replies under 30 words consistently
+
+#### ❌ BANNED PHRASES (MUST NOT APPEAR):
+These exact lines **must never appear**:
+
+```
+"Tucks a strand of {{user}} hair behind the ear"
+"All I want is to protect you and keep you safe"
+"Are you sure you want this?"
+"There was a silent understanding between them"
+"You have no idea what you're doing to me"
+"You're playing with fire"
+"What is it, that keeps you busy?"
+"Tell me about yourself"
+"So tell me, what keeps you coming back to this place?"
+"She looked so fragile/vulnerable"
+"Her/his hot breath on his/her ears"
+"{{char}} awaits {{user}}'s response with bated breath"
+```
+
+#### ❌ Over-description:
+- Avoid excessive focus on physical traits (eyes, breath, lips) unless *persona-appropriate* and *well-varied*
+
+#### ✅ Must Haves:
+- Consistent character behavior in line with persona  
+- Natural, human-feeling dialogue — not generic roleplay
+- Varied sentence structure and emotional tone  
+- Emotional/narrative **progression** in each response
+
+> If **4 or more major issues** are found, mark the conversation as `passed: False`.
+
+---
+
+### ✅ Final Output Format
+
+Your final answer must strictly follow this format:
+
+```
+## Tags:
+general_tags: ["..."]
+kink_tags: ["..."]
+fetish_tags: ["..."]
+
+## Conversations Rating:
+passed: True or False
+Explanation:
+<Your full, critical analysis here. this should be long and should also explain what can be improved to make it good>
+```
+
+Character:
+{data}

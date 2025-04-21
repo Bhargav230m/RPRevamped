@@ -1,0 +1,84 @@
+Your job is to **rewrite the conversations** to pass all quality checks while **preserving the character’s unique voice, behavior, and scenario context**.
+
+---
+
+### 🧠 INPUT FORMAT:
+You will be given:
+
+- `Character`: Includes Name, Persona, Example Dialogues, Scenario, and Starter Message
+- `Conversations`: A set of dialogue exchanges between {{user}} and {{char}} that failed to meet standards
+- `Quality_Control`: A structured critique of what failed (banned phrases, voice issues, pacing, etc.)
+
+---
+
+### 🎯 OBJECTIVE:
+You must **rewrite ONLY the conversations**, fixing the problems described in `quality_control`.
+You can also write the conversations from scratch if you think the current conversations are not good and cannot be modified to fit the Quality Control Prompt.
+~~~You MUST change responses of both {{user}} and {{char}} and you have to rewrite from SCRATCH.~~~
+
+Do **not** modify the Persona, Scenario, or Starter. Just focus on rewriting conversations.
+
+Be hypercritical and analytical. A conversation **fails** if any of the following are true:
+#### ❌ Major Red Flags:
+- **Character voice mismatch**: `{{char}}` is out-of-character based on the `Persona`
+- **Dialogue repetition**: Emotional or verbal repetition without narrative progression
+- **Shallow interaction**: Lack of layered interaction or emotional subtext
+- **Bot-like exchanges**: Flat, robotic, or generic lines from either speaker
+- **Filler tropes or clichés**: Overused or generic romantic/erotic lines (see banned phrases)
+- **Imbalanced turns**: `{{char}}` replies under 80 words or `{{user}}` replies under 50 words consistently
+- **Not Enough Words**: if {{char}} responses are below 80 words or {{user}} responses are below 50 words then conversation fails.
+
+#### ❌ BANNED PHRASES (MUST NOT APPEAR):
+These exact lines **must never appear**:
+
+```
+"Tucks a strand of {{user}} hair behind the ear"
+"All I want is to protect you and keep you safe"
+"Are you sure you want this?"
+"There was a silent understanding between them"
+"You have no idea what you're doing to me"
+"You're playing with fire"
+"What is it, that keeps you busy?"
+"Tell me about yourself"
+"So tell me, what keeps you coming back to this place?"
+"She looked so fragile/vulnerable"
+"Her/his hot breath on his/her ears"
+"{{char}} awaits {{user}}'s response with bated breath"
+```
+
+#### ❌ Over-description:
+- Avoid excessive focus on physical traits (eyes, breath, lips) unless *persona-appropriate* and *well-varied*
+
+#### ✅ Must Haves:
+- Consistent character behavior in line with persona
+- Natural, human-feeling dialogue — not generic roleplay
+- Varied sentence structure and emotional tone
+- Emotional/narrative **progression** in each response
+- ~!!YOU MUST KEEP {{char}} responses long (above <80 words) and same with {{user}} responses (above <50 words)!!~
+- You MUST change the responses accordingly to Quality Control
+- Take Quality Control prompt EXTREMELY SERIOUSLY and fix the problems
+
+
+---
+
+How to respond?
+You just have to respond with the rewritten conversations and nothing else.
+Follow this format:
+## Dialogue 1
+{{user}}: *rewritten message*
+{{char}}: *rewritten response*
+
+## Dialogue 2
+{{user}}: *rewritten message*
+{{char}}: *rewritten response*
+
+... more
+
+Here is the character, conversations and most importantly Quality Control:
+Character:
+{character}
+
+Quality Control:
+{qc}
+
+Regenerated Responses:

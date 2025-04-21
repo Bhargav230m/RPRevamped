@@ -1,0 +1,91 @@
+## ✅ TASK: Generate a **Chain of Thought (CoT)** that explains the system’s reasoning behind how to write each of `{{char}}`’s responses to the `{{user}}`.
+
+---
+
+### 🧠 INPUT FORMAT:
+You will receive:
+
+- **Character**: A full profile including:
+  - **Name**
+  - **Persona**: Includes tone, personality traits, values, speech style, quirks, goals, etc.
+  - **Example Dialogues**
+  - **Scenario**: The context in which the character is speaking (their role, situation, background setting).
+  - **Starter Message**: The opening message from the character.
+
+- **Conversations**: A back-and-forth dialogue between `{{user}}` and `{{char}}`.
+
+---
+
+### 🎯 OBJECTIVE:
+For each message sent by `{{char}}`, generate a **Chain of Thought (CoT)** from an **OOC system-level perspective**.
+
+This means: Think like the system planning how to respond **as {{char}}**, given the user’s input and the character’s defined traits.
+
+You should simulate how the system reasons:
+- "The user just said X"
+- "The character’s persona says they are Y"
+- "I could respond with A, B, or C…"
+- "Let’s go with B because it best matches their tone and furthers the conversation."
+
+The goal is to **explain the step-by-step decision-making process** behind crafting the most in-character and context-aware response.
+
+---
+
+### ✨ WHAT TO INCLUDE IN EACH CoT:
+For every `{{char}}` response:
+
+- Interpret what the user just said or implied
+- Reference the **character’s persona** explicitly (e.g., “The persona says {{char}} is blunt and doesn’t sugarcoat things…”)
+- Consider multiple possible responses and **weigh them**
+- Show self-corrections: (e.g., “Hmm, that’s too polite… doesn’t fit the tone. Let’s revise.”)
+- Justify the final choice: Why this exact response fits the persona, the conversation flow, and emotional tone
+- Capture tone, pacing, and nuance appropriate to the scenario
+- Chain of Thought should be **minimum 300 words**, and written as a **step-by-step internal reasoning process**
+
+---
+
+### 🧠 SYSTEM-STYLE CoT EXAMPLE:
+```
+## COT 1:
+Okay, so the user just asked a sarcastic question. According to the persona, {{char}} is snarky and often responds with biting wit. One option could be to mirror the sarcasm, but escalate it slightly to show dominance. I originally thought about having {{char}} reply with “Obviously, genius,” but that feels a bit flat.
+
+Wait—let’s remember: the persona says {{char}} “takes pleasure in mocking others, but also secretly craves validation.” So maybe the response should mock, but in a way that invites continued interaction.
+
+Option A: “You really cracked the code there, Sherlock.”
+Option B: “Wow, that took you only five years to figure out.”
+Option C: “Cute. Try again.”
+
+I like B best—it’s harsh but playful, keeps the energy up, and aligns with the tone. A feels too cliché. C is too dismissive—it might end the thread early.
+
+Let’s go with B. It’s cutting, but leaves the door open.
+```
+
+---
+
+### 📌 FORMAT:
+YOU MUST FOLLOW THIS FORMAT TO GENERATE RESPONSES:
+## COT 1:
+{{Chain of thought for {{char}}'s first response}}
+
+## COT 2:
+{{Chain of thought for {{char}}'s second response}}
+
+...continue
+
+
+---
+
+### 🛑 IMPORTANT RULES:
+- Every CoT should be a **system-level, OOC breakdown** of the thinking process
+- Mention the **character’s persona traits by name**
+- Include **multiple candidate responses** and analysis of tone
+- Include self-correction or revision if relevant
+- Do **NOT** summarize the conversation
+- Keep it focused on *how to generate the best in-character response*
+- Add multiple paragraphs instead of making it a giant paragraph.
+
+Here is the character and most importantly conversations:
+Character:
+{character}
+
+Generated chain of thoughts:

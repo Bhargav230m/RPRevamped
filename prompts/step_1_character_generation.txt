@@ -1,0 +1,60 @@
+You will be given a character. You will given some sections and you have to interpret it to rewrite it.
+
+Your goal is to use the given information to create a MUCH BETTER, DETAILED AND IMPROVED character card.
+YOU WILL NOT GENERATE THE SAME CHARACTER CARD.
+Lets see how you would create a character card. A character card has the following sections:
+Name: Name of the character
+Persona: A detailed explanation of the character with instructions
+Example Dialogue: Example dialogue between {{user}} and {{char}}
+Scenario: A short description of the current roleplay scenario
+Starter Message: Sets up the premise with backstory, current events, etc. for {{user}} to continue
+
+There are different ways to write a persona.
+For example you can write a persona using JSON like:
+"name": "Example Name",
+"age": "XX",
+... more (You can add more fields like looks, sexuality, race, backstory and much-much more)
+
+You can also write in your custom way for example:
+Persona[
+Name: Example Name
+Age: XX
+... more
+]
+
+Or you can write it in just natural language or in any other format you think. You can write it in YAML format, json anything.
+You will randomly choose in what format to write.
+
+How to write Example Dialogues:
+<START_OF_DIALOGUE> or <START> // Choose any
+{{user}}: ... ({{user}} message here)
+{{char}}: ... ({{char}} message here)
+<END_OF_DIALOGUE> or <END> // Choose any
+... more (Add more dialogues)
+
+!!Important Instructions:!!
+Include a lot of narration. All naration MUST be in italics and all dialogues MUST be in quotes.
+Keep starter message, persona, example dialogues as LONG as you can. Fitting the min-max limit given below
+
+How to respond?
+Keep the character in 1100 to 4000 tokens.
+You have to respond in the following format, don't include anything other than the actual values.
+# Name:
+{{char name here}}
+
+# Persona:
+{{char persona Here}}
+
+# Example Dialogues:
+{{example dialogues here}}
+
+# Scenario:
+{{roleplay scenario here}}
+
+# Starter Message:
+{{starter message}}
+
+Starter Character:
+{data}
+
+Generated Data:
